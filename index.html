@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Біографія YouTube Каналу</title>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-53X36SCBP7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-53X36SCBP7');
+  </script>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      AOS.init({
+        duration: 1000,
+        once: false,
+        mirror: true
+      });
+    });
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const sections = document.querySelectorAll('.bio-section');
+      const body = document.body;
+      
+      function checkScroll() {
+        const scrollPosition = window.scrollY || document.documentElement.scrollTop;
+        
+        if (scrollPosition > 50) {
+          body.classList.add('blur-background');
+        } else {
+          body.classList.remove('blur-background');
+        }
+      }
+      
+      window.addEventListener('scroll', checkScroll);
+      checkScroll();
+    });
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const sections = document.querySelectorAll('.bio-section');
+      
+      function checkScroll() {
+        const scrollPosition = window.scrollY || document.documentElement.scrollTop;
+        
+        if (scrollPosition > 100) {
+          document.body.classList.add('scroll-active');
+        } else {
+          document.body.classList.remove('scroll-active');
+        }
+      }
+      
+      window.addEventListener('scroll', checkScroll);
+      checkScroll();
+    });
+  </script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: black;
+      color: white;
+      animation: fadeInPage 1.2s ease-in-out;
+      background-image: url('foto2.jpg');
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+      transition: background-filter 0.5s ease;
+      position: relative;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: inherit;
+      z-index: -1;
+    }
+
+    body.blur-background {
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    body::after {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      pointer-events: none;
+    }
+
+    body.blur-background::after {
+      opacity: 1;
+    }
+
+    header {
+      background-color: rgba(255, 69, 58, 0.9); 
+      padding: 20px 0;
+      text-align: center;
+      font-size: 28px;
+      font-weight: bold;
+      color: white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .avatar-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 40px;
+      opacity: 0;
+      animation: fadeInElements 1s ease-in-out forwards;
+      animation-delay: 0.3s;
+    }
+
+    .avatar {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 4px solid red;
+      object-fit: cover;
+    }
+
+    .channel-name {
+      text-align: center;
+      font-size: 36px;
+      font-weight: bold;
+      margin-top: 30px;
+      opacity: 0;
+      animation: fadeInElements 1s ease-in-out forwards;
+      animation-delay: 0.6s;
+    }
+
+    .subscribe-btn {
+      display: block;
+      margin: 20px auto;
+      padding: 12px 24px;
+      background-color: red;
+      border: none;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      opacity: 0;
+      animation: fadeInElements 1s ease-in-out forwards;
+      animation-delay: 0.9s;
+    }
+
+    .subscribe-btn:hover {
+      background-color: darkred;
+    }
+
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      margin: 40px 0;
+      font-size: 18px;
+      text-align: center;
+      opacity: 0;
+      animation: fadeInElements 1s ease-in-out forwards;
+      animation-delay: 1.2s;
+    }
+
+    .stats div {
+      line-height: 1.5;
+    }
+
+    .stats strong {
+      font-size: 22px;
+      color: red;
+      display: block;
+    }
+
+    .section {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    .section h2 {
+      color: red;
+      border-bottom: 2px solid red;
+      padding-bottom: 10px;
+      margin-bottom: 15px;
+    }
+
+    .section p {
+      line-height: 1.7;
+      font-size: 16px;
+      color: #ccc;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    footer {
+      background-color: #111;
+      color: gray;
+      text-align: center;
+      padding: 15px 0;
+      font-size: 14px;
+    }
+
+    @keyframes fadeInPage {
+      0% {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInElements {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .bio-section {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+      box-sizing: border-box;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      text-align: center;
+      width: 100%;
+      max-width: 1200px;
+      margin: 30vh auto;
+      background-color: rgba(255, 255, 255, 0.9);
+    }
+
+    section {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .bio-text, .bio-image {
+      margin: 0 auto;
+    }
+
+    .bio-image {
+      max-width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .social-icons img:hover {
+      transform: scale(1.2);
+    }
+
+    @media (max-width: 768px) {
+      .bio-section {
+        flex-direction: column;
+        padding: 20px;
+      }
+      .social-icons img {
+        width: 60px;
+      }
+    }
+
+    nav ul li a:hover {
+      color: #ffcccb;
+    }
+
+    .read-more-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #ff4757;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .read-more-btn:hover {
+      background-color: #ff0015;
+      transform: translateY(-3px);
+    }
+
+    .birth-info {
+      display: inline-block;
+      background: #ffe3ec;
+      color: #ff0015;
+      font-weight: bold;
+      padding: 10px 18px;
+      border-radius: 8px;
+      margin-bottom: 18px;
+      font-size: 1.1em;
+      box-shadow: 0 2px 8px rgba(200, 24, 91, 0.08);
+    }
+
+    .birth-label {
+      margin-right: 8px;
+      font-weight: bold;
+    }
+
+    .bio-title {
+      font-size: 2.5em;
+      color: #ff0015;
+      text-align: center;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .bio-card {
+      line-height: 1.8;
+      color: #333;
+      text-align: justify;
+      margin-bottom: 20px;
+      background: rgba(255, 255, 255, 0.8);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+  <header>
+    Біографія YouTube Каналу
+  </header>
+
+  <div class="avatar-container">
+    <img class="avatar" src="foto1.jpg" alt="Валерій Судче">
+  </div>
+
+  <div class="channel-name">Валерій Судче</div>
+
+  <a href="https://www.youtube.com/@sudche1979" target="_blank">
+    <button class="subscribe-btn">Підписатися</button>
+  </a>
+
+  <div class="stats">
+    <div>
+      <strong>220K</strong>
+      Підписників
+    </div>
+    <div>
+      <strong>205</strong>
+      Відео
+    </div>
+    <div>
+      <strong>126M</strong>
+      Переглядів
+    </div>
+  </div>
+
+  <section id="section1" class="bio-section" data-aos="fade-up">
+    <div class="bio-content">
+      <img src="photo4.jpg" alt="Image 4" class="bio-image" data-aos="zoom-in">
+      <div class="bio-text" data-aos="fade-right">
+        <h2 class="bio-title">Народження та дитинство</h2>
+        <div class="bio-card">
+          <p><strong>Дата народження:</strong> 14 вересня 1979 року</p>
+          <p>З раннього дитинства він проявляв допитливий характер і тягу до музики: ще в школі збирав друзів, щоб разом слухати плівки з українськими мелодіями й обговорювати улюблених виконавців.</p>
+        </div>
+        <a href="detailed-bio.html" class="read-more-btn">Докладніше</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="section2" class="bio-section" data-aos="fade-up">
+    <div class="bio-content">
+      <img src="photo5.jpg" alt="Image 5" class="bio-image" data-aos="zoom-in">
+      <div class="bio-text" data-aos="fade-left">
+        <h2 class="bio-title">Військова служба у Полтаві</h2>
+        <div class="bio-card">
+          <p><strong>Дата служби:</strong> 1998 рік</p>
+          <p>У 1998 році Валерій призваний до лав Збройних Сил України й проходив службу в Полтаві в частині зв'язку ПФК ВІУЗ.</p>
+        </div>
+        <a href="career.html" class="read-more-btn">Докладніше</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="section3" class="bio-section" data-aos="fade-up">
+    <div class="bio-content">
+      <img src="photo6.jpg" alt="Image 6" class="bio-image" data-aos="zoom-in">
+      <div class="bio-text" data-aos="fade-right">
+        <h2 style="font-size: 2.5em; color: #ff416c; text-align: center; margin-bottom: 20px; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);">Перші музичні кроки: весільні виступи</h2>
+        <p style="font-size: 1.2em; line-height: 1.8; color: #333; text-align: justify; margin-bottom: 20px; background: rgba(255, 255, 255, 0.8); padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+          У віці 27 років Валерій уперше вийшов на сцену — на місцевих весіллях та святкуваннях. Саме тоді він упевнено оволодів гітарою, опанував сценічну взаємодію з аудиторією та почав формувати власний стиль аранжувань під живий звук.
+        </p>
+        <div class="buttons-wrapper">
+          <a href="hobbies.html" class="read-more-btn">Докладніше</a>
+          <a href="video.html" class="read-more-btn">Відео</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="section7" class="bio-section" data-aos="fade-up">
+    <div class="bio-content">
+      <img src="photo10.jpg" alt="Image 10" class="bio-image" data-aos="zoom-in">
+      <div class="bio-text" data-aos="fade-right">
+        <h2 style="font-size: 2.5em; color: #ff416c; text-align: center; margin-bottom: 20px; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);">Музична еволюція: від каверів до авторських хітів</h2>
+        <p style="font-size: 1.2em; line-height: 1.8; color: #333; text-align: justify; margin-bottom: 20px; background: rgba(255, 255, 255, 0.8); padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+          На початку на каналі звучали кавери на популярні пісні, але завдяки своєму відчуттю мелодії та вмінню оновлювати звукову палітру, Валерій незабаром переключився на українські народні пісні з власними аранжуваннями. Згодом з'явилися авторські композиції, а також замовні тексти від відомих українських поетів та поетес. Ця стратегія виявилась вкрай вдалою: популярність Валерія почала стрімко зростати, і його музика тепер лунає не лише в усіх куточках України, а й далеко за її межами.
+        </p>
+        <div class="buttons-wrapper">
+          <a href="seventh-section.html" class="read-more-btn">Докладніше</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="section5" class="bio-section" data-aos="fade-up">
+    <div class="bio-content">
+      <img src="photo8.jpg" alt="Image 8" class="bio-image" data-aos="zoom-in">
+      <div class="bio-text" data-aos="fade-right">
+        <h2 class="bio-title">Створення YouTube‑каналу</h2>
+        <div class="bio-card">
+          <p><strong>Дата створення каналу:</strong> 22 березня 2018 року</p>
+          <p>YouTube‑канал Валерія Судче було зареєстровано 22 березня 2018 року.</p>
+        </div>
+        <a href="fifth-section.html" class="read-more-btn">Докладніше</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="section6" class="bio-section" data-aos="fade-up">
+    <div class="bio-content">
+      <img src="photo9.jpg" alt="Image 9" class="bio-image" data-aos="zoom-in">
+      <div class="bio-text" data-aos="fade-left">
+        <h2 style="font-size: 2.5em; color: #ff416c; text-align: center; margin-bottom: 20px; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);">Відмова від розважальних заходів під час війни</h2>
+        <p style="font-size: 1.2em; line-height: 1.8; color: #333; text-align: justify; margin-bottom: 20px; background: rgba(255, 255, 255, 0.8); padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+          З початком повномасштабної війни Валерій принципово відмовився від участі у весільних та інших концертних заходах, вважаючи за потрібне направити всі сили на підтримку своєї країни. Замість розважальних виступів він присвятив себе волонтерству та моральному підкріпленню українців через музику.
+        </p>
+        <div class="buttons-wrapper">
+          <a href="sixth-section.html" class="read-more-btn">Докладніше</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="section4" class="bio-section" data-aos="fade-up">
+    <div class="bio-content">
+      <img src="photo7.jpg" alt="Image 7" class="bio-image" data-aos="zoom-in">
+      <div class="bio-text" data-aos="fade-left">
+        <h2 style="font-size: 2.5em; color: #ff416c; text-align: center; margin-bottom: 20px; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);">Травма хребта</h2>
+        <p style="font-size: 1.2em; line-height: 1.8; color: #333; text-align: justify; margin-bottom: 20px; background: rgba(255, 255, 255, 0.8); padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+          Приблизно у 2018–2019 роках Валерій отримав травму хребта. Подробиці невідомі, однак відомо, що він переніс тяжку операцію. Як каже сам Валерій: "Жити буду, але здоров'я вже не те. Те, що витворяв на турніках у юності, залишилося в юності. Дякую Богу, що хоча б можу ходити."
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="social-icons" style="text-align: center; margin-top: 20px;">
+    <h2>Соціальні Мережі</h2>
+    <a href="https://www.tiktok.com/@valeriy_sudche" target="_blank">
+      <img src="photo11.png" alt="TikTok" style="width: 80px; margin: 0 20px; transition: transform 0.3s;">
+    </a>
+    <a href="https://www.instagram.com/valeriy__sudche?igsh=MThha2hidjZyMDRweg==" target="_blank">
+      <img src="photo12.png" alt="Instagram" style="width: 80px; margin: 0 20px; transition: transform 0.3s;">
+    </a>
+    <a href="https://www.facebook.com/valerij.ostimcuk?locale=uk_UA" target="_blank">
+      <img src="photo13.png" alt="Facebook" style="width: 80px; margin: 0 20px; transition: transform 0.3s;">
+    </a>
+    <a href="https://t.me/makarena1945" target="_blank">
+      <img src="photo14.png" alt="Telegram" style="width: 80px; margin: 0 20px; transition: transform 0.3s;">
+    </a>
+  </div>
+
+</body>
+</html>

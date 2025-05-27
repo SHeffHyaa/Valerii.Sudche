@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Відео | Перші музичні кроки</title>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-53X36SCBP7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-53X36SCBP7');
+  </script>
+  <link rel="stylesheet" href="styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background: #111;
+      color: #fff;
+      text-align: center;
+      min-height: 100vh;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .video-wrapper {
+      margin: 40px auto;
+      background: #222;
+      border-radius: 16px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+      padding: 32px 24px;
+      max-width: 700px;
+      width: 100%;
+    }
+    video {
+      width: 100%;
+      border-radius: 12px;
+      background: #000;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+    }
+    .back-btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 12px 32px;
+      background: linear-gradient(to right, #ff416c, #ff4b2b);
+      color: #fff;
+      border: none;
+      border-radius: 30px;
+      font-size: 1.1em;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background 0.3s, transform 0.2s;
+    }
+    .back-btn:hover {
+      background: #ff416c;
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+  <div class="video-wrapper">
+    <h1>Перші музичні кроки: весільні виступи</h1>
+    <video controls>
+      <source src="video1.mp4" type="video/mp4">
+      Ваш браузер не підтримує відео тег.
+    </video>
+    <a href="index.html#section3" class="back-btn">Повернутися</a>
+  </div>
+</body>
+</html> 
