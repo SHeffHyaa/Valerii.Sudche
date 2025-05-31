@@ -1,3 +1,7 @@
+  html, body {
+    overflow-x: hidden;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
@@ -5,7 +9,6 @@ body {
     line-height: 1.6;
     background-color: #000;
     color: #333;
-    overflow-x: hidden;
     background-image: url('foto2.jpg');
     background-size: cover;
     background-position: center;
@@ -233,22 +236,160 @@ section:first-of-type p {
 }
 
 @media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+  .bio-section {
+    padding: 15px 10px;
+    margin: 20px auto;
+    background-color: rgba(255, 255, 255, 0.95);
+  }
+
+  .bio-section:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
   .bio-content {
+    flex-direction: column !important;
+    gap: 15px;
+  }
+
+  .bio-section:nth-child(even) .bio-content {
     flex-direction: column !important;
   }
 
-  .bio-image,
-  .bio-text {
+  .bio-image {
     width: 100%;
     max-width: 100%;
+    margin: 10px auto 0;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    order: 2;
+  }
+
+  .bio-image:hover {
+    transform: scale(1.05);
+  }
+
+  .bio-text {
+    width: 100%;
+    padding: 10px 5px;
+    order: 1;
+  }
+
+  .bio-text h2 {
+    font-size: 1.6em;
+    margin-bottom: 10px;
+  }
+
+  .bio-text p {
+    font-size: 0.95em;
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+
+  .bio-card {
+    padding: 10px;
+    margin-bottom: 10px;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .bio-card p {
+    font-size: 0.95em;
+    line-height: 1.5;
+  }
+
+  main,
+  section,
+  .bio-section,
+  .video-container,
+  .modal-content {
+    box-sizing: border-box;
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .video-container iframe {
+      width: calc(100% - 20px);
+      margin: 0 auto;
+  }
+
+  .read-more-btn,
+  .video-btn {
+    padding: 8px 15px;
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    overflow-x: hidden;
+  }
+  .bio-section {
+    padding: 10px 5px;
+    margin: 15px auto;
+    background-color: rgba(255, 255, 255, 0.9);
   }
 
   .bio-image {
-    margin-bottom: 20px;
+    max-height: 200px;
+    object-fit: cover;
+    object-position: center;
+    margin-top: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+
+  .bio-text {
+    padding: 8px 5px;
+  }
+
+  .bio-text h2 {
+    font-size: 1.4em;
+    margin-bottom: 8px;
+  }
+
+  .bio-card {
+    padding: 8px;
+    margin-bottom: 8px;
+    background: rgba(255, 255, 255, 0.75);
+  }
+
+  .bio-card p {
+    font-size: 0.9em;
+    line-height: 1.4;
   }
 
   .bio-section.expanded {
-    padding-bottom: 60px;
+    padding-bottom: 20px;
+  }
+
+  main,
+  section,
+  .bio-section,
+  .video-container,
+  .modal-content {
+    box-sizing: border-box;
+    width: 100%;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  .video-container iframe {
+      width: calc(100% - 10px);
+      margin: 0 auto;
+  }
+
+  nav ul li {
+      margin-right: 0;
+  }
+
+  .read-more-btn,
+  .video-btn {
+    padding: 6px 12px;
+    font-size: 0.85em;
   }
 }
 
@@ -330,7 +471,7 @@ body.blur-background::after {
   }
 
   .bio-section.expanded {
-    padding-bottom: 60px;
+    padding-bottom: 800px;
   }
 
   .section-video-player.active {
@@ -349,25 +490,23 @@ body.blur-background::after {
 }
 
 @media (max-width: 480px) {
-  .bio-section {
-    padding: 20px;
-    margin: 15vh auto;
-  }
-
-  .bio-text {
-    padding: 10px;
-  }
-
-  .bio-section.expanded {
-    padding-bottom: 40px;
-  }
-
-  .section-video-player.active {
-    max-height: 500px;
+  .modal-content {
+    width: 100%;
+    border-radius: 15px 15px 0 0;
   }
 
   .video-container {
-    border-width: 2px;
+    margin-top: 40px; 
+  }
+
+  .buttons-wrapper {
+    margin-top: 15px;
+  }
+
+  .video-btn,
+  .read-more-btn {
+    font-size: 14px;
+    padding: 12px 16px;
   }
 }
 
@@ -459,8 +598,14 @@ video {
 }
 
 @keyframes slideUp {
-  from { transform: translateY(100%); }
-  to { transform: translateY(0); }
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 @media (max-width: 768px) {
