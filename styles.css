@@ -1,4 +1,4 @@
-  html, body {
+html, body {
     overflow-x: hidden;
 }
 
@@ -278,27 +278,63 @@ section:first-of-type p {
     order: 1;
   }
 
-  .bio-text h2 {
-    font-size: 1.6em;
-    margin-bottom: 10px;
+  /* Уніфіковані стилі для заголовків h2 у всіх типах секцій на мобільних */
+  section h2,
+  .bio-section h2,
+  .bio-text h2,
+  .bio-title,
+  .section h2 {
+    font-size: 1.4em !important;
+    margin-bottom: 15px !important;
   }
 
-  .bio-text p {
-    font-size: 0.95em;
-    line-height: 1.5;
-    margin-bottom: 10px;
+  /* Уніфіковані стилі для параграфів та елементів списків у всіх типах секцій на мобільних */
+  section p,
+  section li,
+  .bio-section p,
+  .bio-section li,
+  .bio-text p,
+  .bio-text li,
+  .bio-card p,
+  .bio-card li,
+  .section p,
+  .section li {
+    font-size: 0.9em !important;
+    line-height: 1.5 !important;
+    margin-bottom: 0.5em !important;
   }
 
-  .bio-card {
-    padding: 10px;
-    margin-bottom: 10px;
-    background: rgba(255, 255, 255, 0.8);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Стилі для першої секції */
+  section:first-of-type h2 {
+    font-size: 1.4em !important;
   }
 
-  .bio-card p {
-    font-size: 0.95em;
-    line-height: 1.5;
+  section:first-of-type p {
+    font-size: 0.9em !important;
+  }
+
+  /* Стилі для секції відео */
+  .video-section h2 {
+    font-size: 1.4em !important;
+  }
+
+  .video-section p {
+    font-size: 0.9em !important;
+  }
+
+  .birth-info {
+    font-size: 0.9em !important;
+    padding: 8px 15px !important;
+  }
+
+  .read-more-btn,
+  .video-btn {
+    padding: 8px 15px !important;
+    font-size: 0.9em !important;
+  }
+
+  .close {
+    font-size: 24px !important;
   }
 
   main,
@@ -313,14 +349,12 @@ section:first-of-type p {
   }
 
   .video-container iframe {
-      width: calc(100% - 20px);
-      margin: 0 auto;
+      width: calc(100% - 20px) !important;
+      margin: 0 auto !important;
   }
 
-  .read-more-btn,
-  .video-btn {
-    padding: 8px 15px;
-    font-size: 0.9em;
+  .video-container {
+    padding-bottom: 75% !important;
   }
 }
 
@@ -346,24 +380,58 @@ section:first-of-type p {
     padding: 8px 5px;
   }
 
-  .bio-text h2 {
-    font-size: 1.4em;
-    margin-bottom: 8px;
+  /* Уніфіковані стилі для всіх заголовків h2 у всіх типах секцій на мобільних */
+  section h2,
+  .bio-section h2,
+  .bio-text h2,
+  .bio-title,
+  .section h2 {
+    font-size: 1.3em !important;
+    margin-bottom: 12px !important;
   }
 
-  .bio-card {
-    padding: 8px;
-    margin-bottom: 8px;
-    background: rgba(255, 255, 255, 0.75);
+  /* Уніфіковані стилі для параграфів та елементів списків у всіх типах секцій на мобільних */
+  section p,
+  section li,
+  .bio-section p,
+  .bio-section li,
+  .bio-text p,
+  .bio-text li,
+  .bio-card p,
+  .bio-card li,
+  .section p,
+  .section li {
+    font-size: 0.85em !important;
+    line-height: 1.4 !important;
+    margin-bottom: 0.4em !important;
   }
 
-  .bio-card p {
-    font-size: 0.9em;
-    line-height: 1.4;
+  /* Стилі для першої секції */
+  section:first-of-type h2 {
+    font-size: 1.3em !important;
+  }
+
+  section:first-of-type p {
+    font-size: 0.85em !important;
+  }
+
+  .birth-info {
+    font-size: 0.85em !important;
+    padding: 6px 12px !important;
+  }
+
+  .read-more-btn,
+  .video-btn {
+    padding: 6px 12px !important;
+    font-size: 0.85em !important;
+  }
+
+  .close {
+    font-size: 20px !important;
   }
 
   .bio-section.expanded {
-    padding-bottom: 20px;
+    padding-bottom: 20px !important;
   }
 
   main,
@@ -378,18 +446,12 @@ section:first-of-type p {
   }
 
   .video-container iframe {
-      width: calc(100% - 10px);
-      margin: 0 auto;
+      width: calc(100% - 10px) !important;
+      margin: 0 auto !important;
   }
 
   nav ul li {
-      margin-right: 0;
-  }
-
-  .read-more-btn,
-  .video-btn {
-    padding: 6px 12px;
-    font-size: 0.85em;
+      margin-right: 0 !important;
   }
 }
 
@@ -622,16 +684,16 @@ video {
   .video-btn,
   .read-more-btn {
     width: 100%;
-    padding: 15px 20px;  
+    padding: 15px 20px;
     font-size: 16px;
   }
 
   .video-container {
-    padding-bottom: 75%; 
+    padding-bottom: 75%;
   }
 
   .close {
-    font-size: 32px; 
+    font-size: 32px;
     padding: 10px;
   }
 }
@@ -643,7 +705,7 @@ video {
   }
 
   .video-container {
-    margin-top: 40px; 
+    margin-top: 40px;
   }
 
   .buttons-wrapper {

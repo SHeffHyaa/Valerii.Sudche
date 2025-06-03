@@ -2,8 +2,7 @@
 <html lang="uk">
 <head>
   <meta charset="UTF-8">
-  <title>Біографія YouTube Каналу</title>
-  <!-- Google tag (gtag.js) -->
+  <title>Біографія Валерія Судче</title>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-53X36SCBP7"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -15,6 +14,7 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="youtube-stats.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       AOS.init({
@@ -27,38 +27,31 @@
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       const sections = document.querySelectorAll('.bio-section');
-      const body = document.body;
-      
-      function checkScroll() {
-        const scrollPosition = window.scrollY || document.documentElement.scrollTop;
-        
-        if (scrollPosition > 50) {
-          body.classList.add('blur-background');
-        } else {
-          body.classList.remove('blur-background');
-        }
+
+      // Function to check if scrolling down
+      let lastScrollTop = 0;
+      function isScrollingDown() {
+          const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+          const scrollingDown = scrollTop > lastScrollTop;
+          lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
+          return scrollingDown;
       }
-      
-      window.addEventListener('scroll', checkScroll);
-      checkScroll();
-    });
-  </script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const sections = document.querySelectorAll('.bio-section');
-      
-      function checkScroll() {
-        const scrollPosition = window.scrollY || document.documentElement.scrollTop;
-        
-        if (scrollPosition > 100) {
-          document.body.classList.add('scroll-active');
-        } else {
-          document.body.classList.remove('scroll-active');
-        }
-      }
-      
-      window.addEventListener('scroll', checkScroll);
-      checkScroll();
+
+      // Create an IntersectionObserver
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          // Check if the element is intersecting and scrolling down on mobile
+          if (entry.isIntersecting && isScrollingDown() && window.innerWidth <= 768) {
+            entry.target.classList.add('animated-once');
+            observer.unobserve(entry.target); // Stop observing once animated
+          }
+        });
+      }, { threshold: 0.1 }); // Observe when 10% of the element is visible
+
+      // Observe each bio-section
+      sections.forEach(section => {
+        observer.observe(section);
+      });
     });
   </script>
   <style>
@@ -418,10 +411,10 @@
     <div class="bio-content">
       <img src="photo6.jpg" alt="Image 6" class="bio-image" data-aos="zoom-in">
       <div class="bio-text" data-aos="fade-right">
-        <h2 style="font-size: 2.5em; color: #ff416c; text-align: center; margin-bottom: 20px; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);">Перші музичні кроки: весільні виступи</h2>
-        <p style="font-size: 1.2em; line-height: 1.8; color: #333; text-align: justify; margin-bottom: 20px; background: rgba(255, 255, 255, 0.8); padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-          У віці 27 років Валерій уперше вийшов на сцену — на місцевих весіллях та святкуваннях. Саме тоді він упевнено оволодів гітарою, опанував сценічну взаємодію з аудиторією та почав формувати власний стиль аранжувань під живий звук.
-        </p>
+        <h2 class="bio-title">Перші музичні кроки: весільні виступи</h2>
+        <div class="bio-card">
+          <p>У віці 27 років Валерій уперше вийшов на сцену — на місцевих весіллях та святкуваннях. Саме тоді він упевнено оволодів гітарою, опанував сценічну взаємодію з аудиторією та почав формувати власний стиль аранжувань під живий звук.</p>
+        </div>
         <div class="buttons-wrapper">
           <a href="hobbies.html" class="read-more-btn">Докладніше</a>
           <a href="video.html" class="read-more-btn">Відео</a>
@@ -434,10 +427,10 @@
     <div class="bio-content">
       <img src="photo10.jpg" alt="Image 10" class="bio-image" data-aos="zoom-in">
       <div class="bio-text" data-aos="fade-right">
-        <h2 style="font-size: 2.5em; color: #ff416c; text-align: center; margin-bottom: 20px; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);">Музична еволюція: від каверів до авторських хітів</h2>
-        <p style="font-size: 1.2em; line-height: 1.8; color: #333; text-align: justify; margin-bottom: 20px; background: rgba(255, 255, 255, 0.8); padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-          На початку на каналі звучали кавери на популярні пісні, але завдяки своєму відчуттю мелодії та вмінню оновлювати звукову палітру, Валерій незабаром переключився на українські народні пісні з власними аранжуваннями. Згодом з'явилися авторські композиції, а також замовні тексти від відомих українських поетів та поетес. Ця стратегія виявилась вкрай вдалою: популярність Валерія почала стрімко зростати, і його музика тепер лунає не лише в усіх куточках України, а й далеко за її межами.
-        </p>
+        <h2 class="bio-title">Музична еволюція: від каверів до авторських хітів</h2>
+        <div class="bio-card">
+          <p>На початку на каналі звучали кавери на популярні пісні, але завдяки своєму відчуттю мелодії та вмінню оновлювати звукову палітру, Валерій незабаром переключився на українські народні пісні з власними аранжуваннями. Згодом з'явилися авторські композиції, а також замовні тексти від відомих українських поетів та поетес. Ця стратегія виявилась вкрай вдалою: популярність Валерія почала стрімко зростати, і його музика тепер лунає не лише в усіх куточках України, а й далеко за її межами.</p>
+        </div>
         <div class="buttons-wrapper">
           <a href="seventh-section.html" class="read-more-btn">Докладніше</a>
         </div>
@@ -463,10 +456,10 @@
     <div class="bio-content">
       <img src="photo9.jpg" alt="Image 9" class="bio-image" data-aos="zoom-in">
       <div class="bio-text" data-aos="fade-left">
-        <h2 style="font-size: 2.5em; color: #ff416c; text-align: center; margin-bottom: 20px; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);">Відмова від розважальних заходів під час війни</h2>
-        <p style="font-size: 1.2em; line-height: 1.8; color: #333; text-align: justify; margin-bottom: 20px; background: rgba(255, 255, 255, 0.8); padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-          З початком повномасштабної війни Валерій принципово відмовився від участі у весільних та інших концертних заходах, вважаючи за потрібне направити всі сили на підтримку своєї країни. Замість розважальних виступів він присвятив себе волонтерству та моральному підкріпленню українців через музику.
-        </p>
+        <h2 class="bio-title">Відмова від розважальних заходів під час війни</h2>
+        <div class="bio-card">
+          <p>З початком повномасштабної війни Валерій принципово відмовився від участі у весільних та інших концертних заходах, вважаючи за потрібне направити всі сили на підтримку своєї країни. Замість розважальних виступів він присвятив себе волонтерству та моральному підкріпленню українців через музику.</p>
+        </div>
         <div class="buttons-wrapper">
           <a href="sixth-section.html" class="read-more-btn">Докладніше</a>
         </div>
@@ -478,10 +471,10 @@
     <div class="bio-content">
       <img src="photo7.jpg" alt="Image 7" class="bio-image" data-aos="zoom-in">
       <div class="bio-text" data-aos="fade-left">
-        <h2 style="font-size: 2.5em; color: #ff416c; text-align: center; margin-bottom: 20px; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);">Травма хребта</h2>
-        <p style="font-size: 1.2em; line-height: 1.8; color: #333; text-align: justify; margin-bottom: 20px; background: rgba(255, 255, 255, 0.8); padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-          Приблизно у 2018–2019 роках Валерій отримав травму хребта. Подробиці невідомі, однак відомо, що він переніс тяжку операцію. Як каже сам Валерій: "Жити буду, але здоров'я вже не те. Те, що витворяв на турніках у юності, залишилося в юності. Дякую Богу, що хоча б можу ходити."
-        </p>
+        <h2 class="bio-title">Травма хребта</h2>
+        <div class="bio-card">
+          <p>Приблизно у 2018–2019 роках Валерій отримав травму хребта. Подробиці невідомі, однак відомо, що він переніс тяжку операцію. Як каже сам Валерій: "Жити буду, але здоров'я вже не те. Те, що витворяв на турніках у юності, залишилося в юності. Дякую Богу, що хоча б можу ходити."</p>
+        </div>
       </div>
     </div>
   </section>
