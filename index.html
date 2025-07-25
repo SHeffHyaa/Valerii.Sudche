@@ -33,27 +33,22 @@
     document.addEventListener('DOMContentLoaded', function() {
       const sections = document.querySelectorAll('.bio-section');
 
-      // Function to check if scrolling down
       let lastScrollTop = 0;
       function isScrollingDown() {
           const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
           const scrollingDown = scrollTop > lastScrollTop;
-          lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
+          lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
           return scrollingDown;
       }
 
-      // Create an IntersectionObserver
       const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
-          // Check if the element is intersecting and scrolling down on mobile
           if (entry.isIntersecting && isScrollingDown() && window.innerWidth <= 768) {
             entry.target.classList.add('animated-once');
-            observer.unobserve(entry.target); // Stop observing once animated
+            observer.unobserve(entry.target);
           }
         });
-      }, { threshold: 0.1 }); // Observe when 10% of the element is visible
-
-      // Observe each bio-section
+      }, { threshold: 0.1 });
       sections.forEach(section => {
         observer.observe(section);
       });
@@ -362,15 +357,15 @@
 
   <div class="stats">
     <div>
-      <strong>220K</strong>
+      <strong>229K</strong>
       Підписників
     </div>
     <div>
-      <strong>205</strong>
+      <strong>213</strong>
       Відео
     </div>
     <div>
-      <strong>126M</strong>
+      <strong>137M</strong>
       Переглядів
     </div>
   </div>
